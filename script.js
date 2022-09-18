@@ -1,26 +1,26 @@
 //update the clock every 1000 miliseconds setTimeout() setInterval()
 
 
-
+//getting the curretn time and transforming it to seconds 
 function getSecondsSinceStartOfDay() {
   return new Date().getSeconds() + 
     new Date().getMinutes() * 60 + 
     new Date().getHours() * 3600;
 }
-console.log(getSecondsSinceStartOfDay())
-console.log(new Date().getHours())
-console.log(new Date().getMinutes() )
 
 
+// transforming the seconds to hours 
 function getHourHandAngle(s) {
   s %= 43200; // seconds in 12 hours
   return ((360 * s / 43200) + 180) % 360;
 }
 
+//transforming the seconds to minutes 
 function getMinuteHandAngle(s) {
   s %= 3600; // seconds in an hour
   return ((6 * s / 60) + 180) % 360;
 }
+//
 
 function getSecondHandAngle(s) {
   s %= 60; // seconds in a minute
